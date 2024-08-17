@@ -15,7 +15,7 @@ var started = false;
 var level = 0;
 
 // Detect a keyboard keypress to start the game
-/*$(document).keydown(function() {
+$(document).keydown(function() {
     // Only start the game if it hasn't started already
     if (!started) {
         // Update the h1 to show the level
@@ -27,13 +27,15 @@ var level = 0;
         // Set started to true to prevent starting the game again on subsequent keypresses
         started = true;
     }
-});*/
+});
 
-$(document).keydown(startGame);
-$("body").click(function(event) {
-    // Start the game only if it hasn't started and the click is not on a color button
-    if (!started && !$(event.target).hasClass("btn")) {
-        startGame();
+// Detect clicks on the body but do nothing if the game has started
+$(document).click(function(event) {
+    // Only process clicks if the game has not started
+    if (!started) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
     }
 });
 
