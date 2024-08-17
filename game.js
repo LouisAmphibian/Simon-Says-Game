@@ -30,7 +30,10 @@ var level = 0;
 });*/
 
 $(document).keydown(startGame);
-$("body").click(startGame);
+$("body").click(function() {
+    if (!started) {
+        startGame();
+    }
 
 function startGame() {
     // Condition to start the game if it hasn't started already
