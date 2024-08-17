@@ -15,7 +15,7 @@ var started = false;
 var level = 0;
 
 // Detect a keyboard keypress to start the game
-$(document).keydown(function() {
+/*$(document).keydown(function() {
     // Only start the game if it hasn't started already
     if (!started) {
         // Update the h1 to show the level
@@ -27,7 +27,21 @@ $(document).keydown(function() {
         // Set started to true to prevent starting the game again on subsequent keypresses
         started = true;
     }
-});
+});*/
+
+$(document).keydown(startGame);
+$(document).click(startGame);
+
+function startGame() {
+    // Condition to start the game if it hasn't started already
+    if (!started) {
+        // Update the h1 to show the level
+        $("#level-title").text("Level " + level);
+        
+        // Call nextSequence() to start the game
+        nextSequence();
+}
+}
 /* End-Step 7 */
 
 
