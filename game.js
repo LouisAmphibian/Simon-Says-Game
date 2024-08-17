@@ -30,10 +30,13 @@ var level = 0;
 });*/
 
 $(document).keydown(startGame);
-$("body").click(function() {
-    if (!started) {
+$("body").click(function(event) {
+    // Start the game only if it hasn't started and the click is not on a color button
+    if (!started && !$(event.target).hasClass("btn")) {
         startGame();
     }
+});
+
 
 function startGame() {
     // Condition to start the game if it hasn't started already
