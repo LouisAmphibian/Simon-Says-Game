@@ -29,7 +29,7 @@ $(document).keydown(function() {
     }
 });
 
-// Detect clicks on the body but do nothing if the game has started
+/*/ Detect clicks on the body but do nothing if the game has started
 $(document).click(function(event) {
     // Only process clicks if the game has not started
     if (!started) {
@@ -38,7 +38,7 @@ $(document).click(function(event) {
         started = true;
     }
 });
-
+*/
 
 function startGame() {
     // Condition to start the game if it hasn't started already
