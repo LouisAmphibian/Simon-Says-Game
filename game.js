@@ -28,28 +28,6 @@ $(document).keydown(function() {
         started = true;
     }
 });
-
-/*/ Detect clicks on the body but do nothing if the game has started
-$(document).click(function(event) {
-    // Only process clicks if the game has not started
-    if (!started) {
-        $("#level-title").text("Level " + level);
-        nextSequence();
-        started = true;
-    }
-});
-*/
-
-function startGame() {
-    // Condition to start the game if it hasn't started already
-    if (!started) {
-        // Update the h1 to show the level
-        $("#level-title").text("Level " + level);
-        
-        // Call nextSequence() to start the game
-        nextSequence();
-}
-}
 /* End-Step 7 */
 
 
